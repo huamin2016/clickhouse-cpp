@@ -54,7 +54,9 @@ flags = [
     '-isystem'
     '/usr/include/c++/9',
     '-isystem',
-    '/usr/include/c++/9/bits'
+    '/usr/include/c++/9/bits',
+    '-isystem',
+    '/home/huamin/clickhouse-cpp'
 ]
 
 
