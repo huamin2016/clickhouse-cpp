@@ -1,12 +1,13 @@
 cxx_binary(
-		name = 'etl',
-		srcs = [
-		'etl.cpp',
-		],
-		compiler_flags = [
-		'-std=c++11',
-		],
-		deps = [
-		'//:clickhouse-cpp',
-		],
-		)
+        name = 'etl',
+        srcs = [
+        'etl.cpp',
+        'ip.cpp'
+        ],
+        compiler_flags = [
+        '-std=c++11',
+        ],
+        deps = [
+        '//:clickhouse-cpp',
+        ],
+        )
