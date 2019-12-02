@@ -64,7 +64,7 @@ map <C-n> :NERDTree<CR>
 
 "auto-format
 ""F5自动格式化代码并保存
-au BufWrite * :Autoformat
+"au BufWrite * :Autoformat
 noremap <F5> :Autoformat<CR>:w<CR>
 let g:autoformat_verbosemode=1
 
@@ -301,7 +301,7 @@ func! CompileCode()
 endfunc
 map<F6> :call CompileCode()<CR>
 
-map <F4> :call TitleDet2() <cr>
+"map <F4> :call TitleDet2() <cr>
 function AddTitle2()
     call append(0,"/************************************************************")
     call append(1," * Author        : huamin.wang")
@@ -337,7 +337,7 @@ function TitleDet2()
     call AddTitle2()
 endfunction
 
-autocmd BufNewFile *.c,*.py,*.cpp,*.sh,*.java exec ":call SetTitle()"
+"autocmd BufNewFile *.c,*.py,*.cpp,*.sh,*.java exec ":call SetTitle()"
 func SetTitle()
 
     if &filetype == 'sh'
