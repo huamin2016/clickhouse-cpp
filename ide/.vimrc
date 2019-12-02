@@ -68,8 +68,8 @@ map <C-n> :NERDTree<CR>
 noremap <F5> :Autoformat<CR>:w<CR>
 let g:autoformat_verbosemode=1
 
-"set autoindent  "自动缩进
-"set cindent  "C自动缩进
+set autoindent  "自动缩进
+set cindent  "C自动缩进
 set shiftwidth=4 "自动缩进空白字符个数
 set softtabstop=4 "tab键的一个制表符，如果softtabstop=5,tabstop=4,则tab是1个制表符加1个空格的混合
 set tabstop=4 "tab键的空格数
