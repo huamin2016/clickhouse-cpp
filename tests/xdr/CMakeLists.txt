@@ -1,5 +1,5 @@
 ADD_EXECUTABLE (xdr-test
-	main.cpp
+	xdr.cpp
 )
 
 TARGET_LINK_LIBRARIES (xdr-test
