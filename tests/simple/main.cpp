@@ -61,7 +61,7 @@ inline void ArrayExample(Client& client) {
     );
 
     /// Delete table.
-    client.Execute("DROP TABLE test.array");
+    //client.Execute("DROP TABLE test.array");
 }
 
 inline void DateExample(Client& client) {
@@ -360,36 +360,36 @@ inline void IPExample(Client &client) {
 
 static void RunTests(Client& client) {
     ArrayExample(client);
-    CancelableExample(client);
-    DateExample(client);
-    EnumExample(client);
-    ExecptionExample(client);
-    GenericExample(client);
-    NullableExample(client);
-    NumbersExample(client);
-    IPExample(client);
-    ShowTables(client);
+    //CancelableExample(client);
+    //DateExample(client);
+    //EnumExample(client);
+    //ExecptionExample(client);
+    //GenericExample(client);
+    //NullableExample(client);
+    //NumbersExample(client);
+    //IPExample(client);
+    //ShowTables(client);
 }
 
 int main() {
     try {
         {
-            Client client(ClientOptions().SetHost("localhost").SetPort(9901).SetDefaultDatabase("test").SetUser("greenet").SetPassword("gnckbase")
-                            .SetPingBeforeQuery(true));
+            Client client(ClientOptions().SetHost("10.8.14.169").SetPort(9901).SetDefaultDatabase("test").SetUser("greenet").SetPassword("gnckbase")
+                            .SetPingBeforeQuery(true).SetCompressionMethod(CompressionMethod::LZ4));
             RunTests(client);
         }
 
-        {
-            Client client(ClientOptions()
-                              .SetHost("localhost")
-                              .SetPort(9901)
-                              .SetDefaultDatabase("test")
-                              .SetUser("greenet")
-                              .SetPassword("gnckbase")
-                            .SetPingBeforeQuery(true)
-                            .SetCompressionMethod(CompressionMethod::LZ4));
-            RunTests(client);
-        }
+        //{
+        //    Client client(ClientOptions()
+        //                      .SetHost("localhost")
+        //                      .SetPort(9901)
+        //                      .SetDefaultDatabase("test")
+        //                      .SetUser("greenet")
+        //                      .SetPassword("gnckbase")
+        //                    .SetPingBeforeQuery(true)
+        //                    .SetCompressionMethod(CompressionMethod::LZ4));
+        //    RunTests(client);
+        //}
     } catch (const std::exception& e) {
         std::cerr << "exception : " << e.what() << std::endl;
     }
