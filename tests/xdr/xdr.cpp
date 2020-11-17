@@ -17,8 +17,8 @@ inline void loadxdr(Client& client) {
     Block b;
 
     /// Create a table.
-    client.Execute("DROP TABLE IF NOT EXISTS test.xdr");
-    client.Execute("CREATE TABLE IF NOT EXISTS test.xdr (c1 String,c2 UInt64) ENGINE = Memory");
+    //client.Execute("DROP TABLE IF EXISTS test.xdr");
+    //client.Execute("CREATE TABLE IF NOT EXISTS test.xdr (c1 String,c2 UInt64) ENGINE = Memory");
 
     //auto arr = std::make_shared<ColumnArray>(std::make_shared<ColumnUInt64>());
     
