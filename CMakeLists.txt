@@ -27,6 +27,7 @@ PROJECT (CLICKHOUSE-CLIENT)
         contrib/gtest
         contrib/lz4
         tests/simple
+        tests/xdr
         ut
     )
 
