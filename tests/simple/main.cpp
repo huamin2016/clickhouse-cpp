@@ -374,15 +374,18 @@ static void RunTests(Client& client) {
 int main() {
     try {
         {
-            Client client(ClientOptions()
-                            .SetHost("localhost")
+            Client client(ClientOptions().SetHost("localhost").SetPort(9901).SetDefaultDatabase("test").SetUser("greenet").SetPassword("gnckbase")
                             .SetPingBeforeQuery(true));
             RunTests(client);
         }
 
         {
             Client client(ClientOptions()
-                            .SetHost("localhost")
+                              .SetHost("localhost")
+                              .SetPort(9901)
+                              .SetDefaultDatabase("test")
+                              .SetUser("greenet")
+                              .SetPassword("gnckbase")
                             .SetPingBeforeQuery(true)
                             .SetCompressionMethod(CompressionMethod::LZ4));
             RunTests(client);
