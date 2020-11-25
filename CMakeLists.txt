@@ -1,7 +1,8 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
+﻿CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
 
 INCLUDE (cmake/cpp17.cmake)
 INCLUDE (cmake/subdirs.cmake)
+
 
 OPTION(BUILD_BENCHMARK "Build benchmark" OFF)
 
@@ -30,6 +31,7 @@ PROJECT (CLICKHOUSE-CLIENT)
         tests/xdr
         ut
     )
+
 
     IF (BUILD_BENCHMARK)
         SUBDIRS(bench)

@@ -36,6 +36,7 @@ TARGET_LINK_LIBRARIES (clickhouse-cpp-lib
 )
 
 ADD_LIBRARY (clickhouse-cpp-lib-static STATIC ${clickhouse-cpp-lib-src})
+
 TARGET_LINK_LIBRARIES (clickhouse-cpp-lib-static
     cityhash-lib
     lz4-lib

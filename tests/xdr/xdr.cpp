@@ -3,6 +3,8 @@
 #include <clickhouse/types/type_parser.h>
 
 #include <iostream>
+#include <ctime>
+
 
 #if defined(_MSC_VER)
 #   pragma warning(disable : 4996)
@@ -12,13 +14,22 @@ using namespace clickhouse;
 using namespace std;
 
 
+void printTime() {
+    time_t now = time(0);
+    char* dt   = ctime(&now);
+    cout << "当前时间:" << dt << endl;
+}
+
+
 inline void loadxdr(Client& client) {
+    printTime();
+
     cout << "loadxdr" << endl;
     Block b;
 
     /// Create a table.
     //client.Execute("DROP TABLE IF EXISTS test.xdr");
-    //client.Execute("CREATE TABLE IF NOT EXISTS test.xdr (c1 String,c2 UInt64) ENGINE = Memory");
+    client.Execute("CREATE TABLE IF NOT EXISTS test.xdr (c1 String,c2 UInt64) ENGINE = Memory");
 
     //auto arr = std::make_shared<ColumnArray>(std::make_shared<ColumnUInt64>());
     
@@ -37,16 +48,19 @@ inline void loadxdr(Client& client) {
     b.AppendColumn("c2", c2);
 
     client.Insert("test.xdr", b);
-
+    
+    
     /// Delete table.
     //client.Execute("DROP TABLE test.array");
 }
 
 
-static void RunTests(Client& client) {
+void RunTests(Client& client) {
     loadxdr(client);
 
 }
+
+string conf = "/home/gnckbase/xdr.conf";
 
 int main() {
     try {
